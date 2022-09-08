@@ -4,7 +4,7 @@ variable "deletion_window_in_days" {
   description = "Duration in days after which the key is deleted after destruction of the resource"
 }
 
-variable "enable_key_rotation" {
+variable "enable_kms_key_rotation" {
   type        = bool
   default     = true
   description = "Specifies whether key rotation is enabled"
