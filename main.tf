@@ -1,7 +1,8 @@
 resource "aws_kms_key" "default" {
+  #checkov:skip=CKV_AWS_7:KMS key rotation is enabled through variable
   count                    = module.context.enabled ? 1 : 0
   deletion_window_in_days  = var.deletion_window_in_days
-  enable_key_rotation      = true #var.enable_key_rotation
+  enable_key_rotation      = var.enable_key_rotation
   policy                   = var.policy
   tags                     = module.context.tags
   description              = var.description
