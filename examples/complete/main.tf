@@ -7,7 +7,7 @@ module "kms_key" {
 
   description             = "Test KMS key"
   deletion_window_in_days = 7
-  enable_key_rotation     = false
+  enable_key_rotation     = true
 
-  context = module.this.context
+  context = module.context.self
 }
